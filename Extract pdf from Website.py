@@ -6,7 +6,7 @@
 
 import os
 
-def extract_url_pdf(input_url,folder_path=os.getcwd()):
+def extract_url_pptx(input_url,folder_path=os.getcwd()):
     
     import os
     import requests
@@ -30,7 +30,7 @@ def extract_url_pdf(input_url,folder_path=os.getcwd()):
     
     counter=0
 
-    for link in soup.select("a[href$='.pdf']"):
+    for link in soup.select("a[href$='.pptx']"):
         #Name the pdf files using the last portion of each link which are unique in this case
         
         filename = os.path.join(folder_location,link['href'].split('/')[-1])
@@ -71,6 +71,7 @@ def extract_url_pdf(input_url,folder_path=os.getcwd()):
 
 # In[2]:
 
+extract_url_pptx(input_url="https://tamilchristiansongs.in/lyrics/")
 
 
 #urls to try:
@@ -91,7 +92,7 @@ extract_url_pdf(input_url="https://www.icai.org/post.html?post_id=17843")
 # In[6]:
 
 
-extract_url_pdf(input_url="https://cbic-gst.gov.in/central-tax-notifications.html")
+extract_url_pptx(input_url="https://cbic-gst.gov.in/central-tax-notifications.html")
 
 # https://cbic-gst.gov.in/central-tax-notifications.html
 
