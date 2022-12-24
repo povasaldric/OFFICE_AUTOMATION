@@ -6,7 +6,7 @@
 
 import os
 
-def extract_url_pdf(input_url,folder_path=os.getcwd()):
+def extract_url_pptx(input_url,folder_path=os.getcwd()):
     
     import os
     import requests
@@ -30,8 +30,8 @@ def extract_url_pdf(input_url,folder_path=os.getcwd()):
     
     counter=0
 
-    for link in soup.select("a[href$='.pdf']"):
-        #Name the pdf files using the last portion of each link which are unique in this case
+    for link in soup.select("a[href$='.pptx']"):
+        #Name the pptx files using the last portion of each link which are unique in this case
         
         filename = os.path.join(folder_location,link['href'].split('/')[-1])
         with open(filename, 'wb') as f:
@@ -66,7 +66,7 @@ def extract_url_pdf(input_url,folder_path=os.getcwd()):
     writer.save()
 
 
-    print("All Pdf files downloaded and Excel File Created")
+    print("All Pptx files downloaded and Excel File Created")
 
 
 # In[2]:
@@ -85,13 +85,13 @@ def extract_url_pdf(input_url,folder_path=os.getcwd()):
 # In[5]:
 
 
-extract_url_pdf(input_url="https://www.icai.org/post.html?post_id=17843")
+extract_url_pptx(input_url="https://www.icai.org/post.html?post_id=17843")
 
 
 # In[6]:
 
 
-extract_url_pdf(input_url="https://cbic-gst.gov.in/central-tax-notifications.html")
+extract_url_pptx(input_url="https://cbic-gst.gov.in/central-tax-notifications.html")
 
 # https://cbic-gst.gov.in/central-tax-notifications.html
 
